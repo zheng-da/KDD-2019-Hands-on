@@ -3,7 +3,6 @@ import pandas as pd
 import numpy as np
 import re
 import string
-import tqdm
 from functools import partial
 
 class MovieLens(object):
@@ -240,7 +239,7 @@ class MovieLens(object):
         self.p_train = []
         self.p_valid = []
         self.p_test = []
-        for uid in tqdm.tqdm(self.user_ids):
+        for uid in self.user_ids:
             user_ratings = self.ratings[self.ratings['user_id'] == uid]
             self.p_train.append(np.array(
                 [self.product_ids_invmap[i] for i in user_ratings[user_ratings['train']]['product_id'].values]))
