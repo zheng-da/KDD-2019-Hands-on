@@ -70,14 +70,7 @@ class TrackML_Dataset(Dataset):
     def __len__(self):
         return len(self.samples)
     
-def trackml_collate(sample):
-    g_input = [s[0] for s in sample]
-    g_input = dgl.batch(g_input)
 
-    g_true = [s[1] for s in sample]
-    g_true = dgl.batch(g_true)
-
-    return g_input, g_true
 
 
 
