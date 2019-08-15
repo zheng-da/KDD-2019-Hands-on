@@ -49,3 +49,28 @@ Community
 ---
 
 Join our Slack using this [invitation link](https://join.slack.com/t/deep-graph-library/shared_invite/enQtNzE1NDE3MTI5NjgwLWNkZjkxNzAzNzdmOTE2NDczZGNiODMyOTdiYmU4NWM2YWI5OWRjNzIxMGU1ZGI1NTRjOTJmY2YyOGRhY2Y2OGQ) (expired in a week). Jumpy to the `kdd19-tutorial` channel for community meetup!
+
+Play locally
+---
+
+Build a docker image with all the environment installed.
+
+```bash
+docker build --force-rm -t dgl-kdd19 -f Dockerfile .
+```
+
+Start a container using the image,
+
+```bash
+docker run -it --rm -p 8888:8888 dgl-kdd19 bash
+```
+
+Within the docker image,
+
+```bash
+cd ~/KDD-2019-Hands-on
+conda activate kdd19
+jupyter notebook --ip 0.0.0.0 --allow-root
+```
+
+Finally, open the url with browswer.
